@@ -19,7 +19,7 @@ local function get_nvim_lsp_diagnostic(diag_type)
 	if next(lsp.buf_get_clients(0)) == nil then
 		return ""
 	else
-		return #vim.diagnostic.get(api.nvim_get_current_buf(), { severity = diag_type })
+		return #vim.diagnostic.get(api.nvim_get_current_buf(), { severity = diag_type }) .. " "
 	end
 end
 
